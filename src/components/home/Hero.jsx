@@ -5,10 +5,8 @@ import { Typewriter } from 'react-simple-typewriter';
 import AnimatedSocialIcon from '../shared/AnimatedSocialIcon';
 
 const Hero = () => {
-
     return (
         <section className="flex flex-col md:flex-row items-center justify-between gap-8 md:rellative">
-
             {/* Left: Text Content */}
             <div className="flex flex-col items-start gap-3 md:gap-4">
                 <p className="text-primary text-lg font-semibold">Hello! I am</p>
