@@ -1,5 +1,3 @@
-import React from "react";
-
 const Button = ({
   children,
   type = "button",
@@ -9,14 +7,14 @@ const Button = ({
   ...props
 }) => {
   let styles =
-    "border-2 border-primary px-4 py-1.5 rounded-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/60";
+    "border-2 border-primary px-4 py-1 md:py-1.5 rounded-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/60 ";
 
   if (variant === "primary") {
     styles += " bg-primary hover:text-white";
   } else if (variant === "outline") {
-    styles += " hover:bg-primary hover:text-white";
+    styles += "hover:bg-primary";
   } else {
-    styles += " bg-gray-200 text-black";
+    styles += "bg-gray-200 text-black";
   }
 
   return (

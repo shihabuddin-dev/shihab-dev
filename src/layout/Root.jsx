@@ -6,9 +6,8 @@ import { Outlet } from 'react-router';
 const Root = () => {
     return (
         <>
-            <nav className='shadow-md'>    <Navbar /></nav>
-
-            <main> <Outlet /></main>
+            <nav><Navbar /></nav>
+            <main className='mt-20'> <Outlet /></main>
             {/* <footer>   <Footer /></footer> */}
         </>
     );
