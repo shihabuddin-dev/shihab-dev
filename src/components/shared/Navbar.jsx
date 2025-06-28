@@ -22,15 +22,14 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="px-4 py-4 flex items-center justify-between relative max-w-6xl mx-auto">
+        <nav className="px-4 py-2 md:py-4 flex items-center justify-between relative max-w-6xl mx-auto">
             {/* Logo */}
             <div className="w-12 h-12">
-
                 <Logo />
             </div>
 
             {/* Nav links - large screens */}
-            <ul className="hidden lg:flex gap-8 text-sm font-medium tracking-wider">
+            <ul className="hidden lg:flex gap-6 text-sm font-medium tracking-wider">
                 {navLinks.map((link) => (
                     <li key={link.name}>
                         <Link to={link.path} className="hover:text-primary">
@@ -50,7 +49,6 @@ const Navbar = () => {
             <div className="lg:hidden">
                 <button onClick={() => setIsOpen(true)} className="py-2 px-2 bg-primary rounded-sm text-lg text-black">
                     <GiHamburgerMenu />
-
                 </button>
             </div>
 
@@ -59,9 +57,7 @@ const Navbar = () => {
                 className={`lg:hidden text-base-content fixed top-0 left-0 h-full w-full bg-base-100 z-50 transition-transform duration-300 text-center ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
                     }`}
             >
-
                 <div className="p-6 space-y-6">
-
 
                     {/* Close button */}
                     <button
@@ -69,14 +65,13 @@ const Navbar = () => {
                         onClick={() => setIsOpen(false)}
                     >
 
-                        <IoIosClose className="text-3xl font-semibold" />
+                        <IoIosClose className="text-3xl font-bold" />
                     </button>
 
                     {/* Logo */}
                     <div className="w-12 h-12">
                         <Logo />
                     </div>
-
 
                     {/* Nav links */}
                     <ul className="flex flex-col gap-4 text-sm font-medium">
@@ -98,6 +93,7 @@ const Navbar = () => {
                         <Button variant="outline">
                             RESUME
                         </Button>
+                        {/* <Button> <ThemeToggle/></Button> */}
                     </div>
                 </div>
             </div>

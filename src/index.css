@@ -15,6 +15,7 @@
   name: "light";
   default: true;
   --color-primary: #00cf5d;
+  /* --color-primary: #EB4899; */
   --color-secondary: #000;
   --color-base-100: #FFFFFF;
   --color-base-200: #F5F5F7;
@@ -25,9 +26,9 @@
 @plugin "daisyui/theme" {
   name: "dark";
   color-scheme: dark;
-  --color-primary: #EB4899;
+  --color-primary: #E3405F;
   --color-secondary: #fff;
-  --color-base-100: #000000;
+  --color-base-100: #111A28;
   --color-base-200: #2A2A3C;
   --color-base-300: #2A2A3C;
   --color-accent: #E7E7E7;
@@ -53,10 +54,14 @@ input[type="number"] {
   appearance: textfield;
 }
 
+/* logo css*/
 .clip-hexagon {
-  clip-path: polygon(
-    25% 6.7%, 75% 6.7%,
-    100% 50%, 75% 93.3%,
-    25% 93.3%, 0% 50%
-  );
+  clip-path: polygon(25% 6.7%, 75% 6.7%,
+      100% 50%, 75% 93.3%,
+      25% 93.3%, 0% 50%);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
 }
