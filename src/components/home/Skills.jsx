@@ -64,12 +64,12 @@ const Skills = () => {
 
     return (
 
-        <section className="">
+        <section id='/skills'>
             <div className="container mx-auto px-4">
                 {/* Section Heading */}
                 <SectionHeading>My Skills</SectionHeading>
                 {/* Tab Toggle */}
-                <div className="flex flex-wrap justify-center gap-3 md:gap-4  mt-6 md:mt-10 mb-6 md:mb-10">
+                <div className="flex flex-wrap justify-center gap-3 md:gap-4  mt-8 md:mt-10 mb-8 md:mb-10">
                     {categories.map((category) => (
                         <button
                             key={category}
@@ -87,15 +87,15 @@ const Skills = () => {
                 </div>
 
                 {/* Skills Icon Grid with card design and names */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5 justify-items-center">
                     {activeSkills.map((skill, index) => (
                         <div
                             key={index}
-                            className={` w-full max-w-[11rem] bg-[#1e293b] rounded-md p-4 md:p-5 flex flex-col items-center justify-center text-center border-t-4 ${skill.borderColor} shadow-lg transition-all ease-in-out duration-300 hover:transform hover:-translate-y-2 hover:scale-103 ${skill.shadowColor} `}>
-                            <div className="text-4xl md:text-5xl">
+                            className={` w-full max-w-[11rem] bg-gradient-to-bl from-base-100 to-base-200/60 rounded-md rounded-t-xl p-4 md:p-5 flex flex-col items-center justify-center text-center border-t-4 ${skill.borderColor} shadow-md transition-all ease-in-out duration-500 hover:transform hover:-translate-y-2 hover:scale-103 ${skill.shadowColor} `}>
+                            <div className="text-4xl md:text-5xl mt-2">
                                 {skill.icon}
                             </div>
-                            <p className="mt-4 font-semibold text-base md:text-lg text-slate-200">
+                            <p className="mt-4 font-semibold text-base md:text-lg">
                                 {skill.name}
                             </p>
                         </div>

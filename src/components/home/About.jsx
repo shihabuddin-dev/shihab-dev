@@ -11,7 +11,7 @@ const skills = [
 
 const About = () => {
     return (
-        <section className="bg-gradient-to-b from-base-100 to-base-200/20">
+        <section id='/about' className="bg-gradient-to-b from-base-100 to-base-200/20">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ const About = () => {
                 <SectionHeading>About Me</SectionHeading>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-6 md:mt-10">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-8 md:mt-10">
 
                 {/* Image Section */}
                 <motion.div
@@ -38,7 +38,7 @@ const About = () => {
                             <img
                                 src={shihab}
                                 alt="Shihab Uddin - MERN Stack Developer"
-                                className="w-full h-76 md:h-120 object-cover rounded-md shadow-lg grayscale-80 hover:grayscale-0"
+                                className="w-full h-76 md:h-120 object-cover duration-900 transition transform ease-in-out rounded-md shadow-lg grayscale-80 hover:grayscale-0"
                             />
                         </div>
 

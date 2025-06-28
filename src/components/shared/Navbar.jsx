@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router";
 import Button from "../ui/Button";
 import ThemeToggle from "../ui/ThemeToggle";
 import Logo from "./Logo";
@@ -11,10 +10,9 @@ const Navbar = () => {
 
     const navLinks = [
         { name: "About", path: "/about" },
-        { name: "Skill", path: "/skill" },
-        { name: "Portfolio", path: "/portfolio" },
+        { name: "Skills", path: "/skills" },
+        { name: "Projects", path: "/Projects" },
         { name: "Contact", path: "/contact" },
-        { name: "Blog", path: "/blog" },
     ];
     const linkClass = "hover:text-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/60"
 
@@ -23,7 +21,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-base-100 z-50 shadow-sm shadow-primary/25">
+        <nav className="backdrop-blur-xl bg-gradient-to-t from-primary/2 via-base-100/50 to-primary/8 fixed top-0 left-0 w-full z-50 border-b border-dashed border-primary/30">
             <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="w-12 h-12">

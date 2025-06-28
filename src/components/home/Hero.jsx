@@ -68,8 +68,8 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 0.6 }}
                 >
-                    <Button>   <a href="#contact">Contact Me</a></Button>
-                    <Button variant='outline'>      <a href="/resume.pdf" download>Get Resume</a></Button>
+                    <Button>   <a href="#/contact">Contact Me</a></Button>
+                    <Button variant='outline'> <a href="/public/vite.svg" download>Get Resume</a></Button>
                 </motion.div>
             </motion.div>
 

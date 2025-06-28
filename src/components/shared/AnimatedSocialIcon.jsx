@@ -56,7 +56,7 @@ const uniqueIconVariants = {
     linkedin: {
         initial: { y: 0, opacity: 1 },
         animate: {
-            y: [0, -6, 0],
+            y: [0, -7, 0],
             opacity: 1,
             transition: {
                 repeat: Infinity,

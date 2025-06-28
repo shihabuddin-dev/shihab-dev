@@ -13,25 +13,21 @@
 
 @plugin "daisyui/theme" {
   name: "light";
-  default: true;
   --color-primary: #00cf5d;
   /* --color-primary: #EB4899; */
   --color-secondary: #000;
   --color-base-100: #FFFFFF;
   --color-base-200: #F5F5F7;
-  --color-base-300: #F3F3F3;
-  --color-accent: #706F6F;
 }
 
 @plugin "daisyui/theme" {
   name: "dark";
+  default: true;
   color-scheme: dark;
   --color-primary: #E3405F;
   --color-secondary: #fff;
   --color-base-100: #111A28;
   --color-base-200: #2A2A3C;
-  --color-base-300: #2A2A3C;
-  --color-accent: #E7E7E7;
 
 }
 
