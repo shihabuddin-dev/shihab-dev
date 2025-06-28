@@ -4,7 +4,7 @@ import Skills from '../../components/home/Skills';
 
 const Home = () => {
     return (
-        <div className='py-12 md:py-18 space-y-20 md:space-y-24 max-w-5xl mx-auto px-4'>
+        <div className='py-12 md:py-18 space-y-24 md:space-y-32 max-w-5xl mx-auto px-4'>
             <Hero />
             <About />
             <Skills />
