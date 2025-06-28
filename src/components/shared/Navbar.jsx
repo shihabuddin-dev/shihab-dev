@@ -27,18 +27,16 @@ const Navbar = () => {
             <div className="w-12 h-12">
                 <Logo />
             </div>
-
             {/* Nav links - large screens */}
             <ul className="hidden lg:flex gap-6 text-sm font-medium tracking-wider">
                 {navLinks.map((link) => (
                     <li key={link.name}>
-                        <Link to={link.path} className="hover:text-primary">
+                        <a href={`#${link.path}`} className="hover:text-primary">
                             {link.name}
-                        </Link>
+                        </a>
                     </li>
                 ))}
             </ul>
-
             {/* Buttons - large screens */}
             <div className="hidden lg:flex items-center gap-3">
                 <Button variant="outline">RESUME</Button>
@@ -77,13 +75,13 @@ const Navbar = () => {
                     <ul className="flex flex-col gap-4 text-sm font-medium">
                         {navLinks.map((link) => (
                             <li key={link.name}>
-                                <Link
-                                    to={link.path}
+                                <a
+                                    href={`#${link.path}`}
                                     className="hover:text-primary"
                                     onClick={handleLinkClick}
                                 >
                                     {link.name}
-                                </Link>
+                                </a>
                             </li>
                         ))}
                     </ul>
