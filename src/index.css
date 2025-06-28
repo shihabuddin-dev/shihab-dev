@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default;
+  /* themes: light --default; */
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #00cf5d;
+  --color-secondary: #000;
+  --color-base-100: #FFFFFF;
+  --color-base-200: #F5F5F7;
+  --color-base-300: #F3F3F3;
+  --color-accent: #706F6F;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  color-scheme: dark;
+  --color-primary: #EB4899;
+  --color-secondary: #fff;
+  --color-base-100: #000000;
+  --color-base-200: #2A2A3C;
+  --color-base-300: #2A2A3C;
+  --color-accent: #E7E7E7;
+
+}
+
+
+a.active {
+  color: var(--color-primary);
+}
+
+/* input type number default arrow reset */
+/* For Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.clip-hexagon {
+  clip-path: polygon(
+    25% 6.7%, 75% 6.7%,
+    100% 50%, 75% 93.3%,
+    25% 93.3%, 0% 50%
+  );
+}
