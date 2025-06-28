@@ -31,12 +31,16 @@ export default function Footer() {
             <div className="flex items-center gap-2 ">Made With <FaHeart className="text-primary animate-pulse" />
                 SHIHAB UDDIN</div>
             {/* Right: Star, Fork */}
-            <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 ">
-                    <div className="flex items-center gap-1"> <FaStar className="text-md" />
-                        <span>Star</span></div>
-                    <FaCodeBranch className="text-md ml-4" />
+            <div className="flex items-center gap-4 cursor-pointer">
+                <div className="flex items-center gap-3">
+                    <a href="https://github.com/shihabuddin-dev/shihab-dev" target="blank" className="flex items-center gap-0.5"> <FaStar className="text-md" />
+                        <span>Star</span></a>
+                    <a href="https://github.com/shihabuddin-dev/shihab-dev" target="blank" className="flex items-center gap-0.5"> 
+    
+                    <FaCodeBranch className="text-md" />
                     <span>Fork</span>
+                        </a>
+
                 </div>
                 <button onClick={handleGoToTop} className="btn btn-primary btn-xs">
                     <MdOutlineKeyboardArrowUp
