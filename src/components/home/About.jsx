@@ -44,7 +44,7 @@ const About = () => {
 
                         {/* Floating badge */}
                         <div
-                            className="absolute -bottom-4 -right-2 md:-right-12"
+                            className="absolute -bottom-4 -right-1 md:-right-12"
 
                         >
                             <Button >

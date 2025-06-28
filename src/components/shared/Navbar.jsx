@@ -4,17 +4,21 @@ import ThemeToggle from "../ui/ThemeToggle";
 import Logo from "./Logo";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosClose } from "react-icons/io";
+import { FaUser, FaTools, FaProjectDiagram, FaBlog, FaEnvelope } from "react-icons/fa";
+import resume from '../../assets/resume.pdf';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    // Add icon property to each nav link
     const navLinks = [
-        { name: "About", path: "/about" },
-        { name: "Skills", path: "/skills" },
-        { name: "Projects", path: "/Projects" },
-        { name: "Contact", path: "/contact" },
+        { name: "About", path: "/about", icon: <FaUser className="inline" /> },
+        { name: "Skills", path: "/skills", icon: <FaTools className="inline" /> },
+        { name: "Projects", path: "/Projects", icon: <FaProjectDiagram className="inline" /> },
+        { name: "Blog", path: "/blog", icon: <FaBlog className="inline" /> },
+        { name: "Contact", path: "/contact", icon: <FaEnvelope className="inline " /> },
     ];
-    const linkClass = "hover:text-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/60"
+    const linkClass = "hover:text-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/60 flex items-center gap-2 rounded-md btn btn-outline bg-transparent border-none hover:bg-primary hover:text-white hover:btn-primary hover:scale-110 hover:shadow-lg";
 
     const handleLinkClick = () => {
         setIsOpen(false);
@@ -28,18 +32,19 @@ const Navbar = () => {
                     <Logo />
                 </div>
                 {/* Nav links - large screens */}
-                <ul className="hidden lg:flex gap-6 text-sm font-medium tracking-wider">
+                <ul className="hidden lg:flex gap-2 text-sm font-medium border-0">
                     {navLinks.map((link) => (
                         <li key={link.name}>
                             <a href={`#${link.path}`} className={linkClass}>
+                                {link.icon}
                                 {link.name}
                             </a>
                         </li>
                     ))}
                 </ul>
                 {/* Buttons - large screens */}
-                <div className="hidden lg:flex items-center gap-3">
-                    <Button variant="outline">RESUME</Button>
+                <div className="hidden lg:flex items-center gap-2">
+                    <Button variant="outline"><a href={resume} download>RESUME</a></Button>
                     <ThemeToggle />
                 </div>
 
@@ -52,10 +57,10 @@ const Navbar = () => {
             </div>
             {/* Mobile menu */}
             <div
-                className={`lg:hidden text-base-content fixed top-0 left-0 h-full w-full bg-base-100 z-50 transition-transform duration-300 text-center ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
+                className={`lg:hidden backdrop-blur-xl bg-gradient-to-t from-primary/2 via-base-100/50 to-primary/8 border-b border-dashed border-primary/30 text-base-content fixed top-0 left-0 h-full w-full z-50 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
                     }`}
             >
-                <div className="p-6 space-y-6">
+                <div className="p-6 space-y-6 backdrop-blur-xl bg-base-100 h-auto border-b border-dashed border-primary/30">
 
                     {/* Close button */}
                     <button
@@ -66,12 +71,13 @@ const Navbar = () => {
                     </button>
 
                     {/* Logo */}
-                    <div className="w-12 h-12">
+                    <div className="w-12 h-12"
+                        onClick={handleLinkClick}>
                         <Logo />
                     </div>
 
                     {/* Nav links */}
-                    <ul className="flex flex-col gap-4 text-sm font-medium">
+                    <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-medium">
                         {navLinks.map((link) => (
                             <li key={link.name}>
                                 <a
@@ -79,6 +85,7 @@ const Navbar = () => {
                                     className={linkClass}
                                     onClick={handleLinkClick}
                                 >
+                                    {link.icon}
                                     {link.name}
                                 </a>
                             </li>
@@ -86,9 +93,10 @@ const Navbar = () => {
                     </ul>
 
                     {/* Resume & Theme Toggle */}
-                    <div className="space-y-3">
-                        <Button variant="outline">
-                            Resume
+                    <div className="flex justify-center items-center gap-4">
+                        <ThemeToggle />
+                        <Button onClick={handleLinkClick} variant="outline">
+                            <a href={resume} download>RESUME</a>
                         </Button>
                     </div>
                 </div>

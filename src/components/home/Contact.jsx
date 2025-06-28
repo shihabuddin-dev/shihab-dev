@@ -9,10 +9,10 @@ const Contact = () => (
     <section id="/contact">
         <SectionHeading>Contact Me</SectionHeading>
 
-        <div className="w-full max-w-4xl mx-auto bg-gradient-to-t from-base-200/30 to-base-200/50 rounded-md shadow p-8 md:p-12 flex flex-col md:flex-row gap-10 mt-8 md:mt-12">
+        <div className="w-full max-w-5xl mx-auto bg-gradient-to-t from-base-200/30 to-base-200/50 rounded-md shadow p-8 md:p-12 flex flex-col md:flex-row justify-between gap-10 mt-8 md:mt-12">
             {/* Contact Form */}
             <form className="flex-1 flex flex-col gap-5" autoComplete="off">
-                <p className="mb-4 text-center flex justify-centter">
+                <p className="max-w-sm mx-auto">
                     Have a question, project, or just want to say hi? Fill out the form below and I'll get back to you soon!
                 </p>
                 <input
