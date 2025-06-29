@@ -12,15 +12,8 @@ const skills = [
 const About = () => {
     return (
         <section id='/about' className="bg-gradient-to-b from-base-100 to-base-200/20 px-4 md:px-0 py-8 md:py-12 rounded-md">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
                 <SectionHeading>About Me</SectionHeading>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center mt-6 sm:mt-8 md:mt-10">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
 
                 {/* Image Section */}
                 <motion.div

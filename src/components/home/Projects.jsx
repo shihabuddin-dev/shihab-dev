@@ -42,14 +42,12 @@ const Projects = () => {
   return (
     <section id="/projects" className='px-2 md:px-0'>
       <SectionHeading>My Projects</SectionHeading>
-      <div className=" mt-8 md:mt-12">
         {/* Responsive Grid for Project Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projectsData.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-      </div>
     </section>
   );
 };

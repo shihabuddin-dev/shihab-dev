@@ -27,11 +27,7 @@ const Hero = () => {
                 >
                     Shihab <span className="text-primary">Uddin</span>
                 </motion.h1>
-                <motion.h2
-                    className="text-xl md:text-2xl font-medium text-base-content/80"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.6 }}
+                <h2 className="text-xl md:text-2xl font-medium text-base-content/80"
                 >
                     <Typewriter
                         words={['MERN Stack Developer', 'Learning TypeScript & Next.js', 'Tech Enthusiast', 'Continuous Learner!']}
@@ -41,7 +37,7 @@ const Hero = () => {
                         typeSpeed={100}
                         deleteSpeed={50}
                     />
-                </motion.h2>
+                </h2>
                 <motion.p
                     className="text-base md:text-lg text-base-content/70 max-w-xl"
                     initial={{ opacity: 0, y: 20 }}

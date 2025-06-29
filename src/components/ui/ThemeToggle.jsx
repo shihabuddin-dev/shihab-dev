@@ -5,9 +5,9 @@ const ThemeToggle = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") return true;
     if (savedTheme === "light") return false;
-    // Default to light mode if no theme is set
-    localStorage.setItem("theme", "light");
-    return false;
+    // Default to dark mode if no theme is set
+    localStorage.setItem("theme", "dark");
+    return true;
   });
 
   useEffect(() => {

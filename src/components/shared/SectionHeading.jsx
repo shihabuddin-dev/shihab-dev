@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 const SectionHeading = ({ children }) => (
-  <motion.div initial={{ opacity: 0, y: 20 }}
+  <div className='mb-10 md:mb-14'> <motion.div initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
@@ -10,7 +10,7 @@ const SectionHeading = ({ children }) => (
       {children}
     </div>
     <div className="flex-1 h-px bg-base-content/30" />
-  </motion.div>
+  </motion.div></div>
 );
 
 export default SectionHeading;

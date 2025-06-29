@@ -72,7 +72,7 @@ const ProjectCard = ({ project }) => {
     'SiReactrouter': BiLogoReact, 
     'SiSwiper': SiJavascript,
     'SiRecharts': SiJavascript,
-    'SiJwt': FaShieldAlt // Using shield icon for JWT (authentication/security)
+    'SiJwt': FaShieldAlt
   };
 
   return (
