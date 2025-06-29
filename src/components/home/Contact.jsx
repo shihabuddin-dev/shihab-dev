@@ -4,6 +4,7 @@ import AnimatedSocialIcon from "../shared/AnimatedSocialIcon";
 import Button from "../ui/Button";
 import Lottie from "lottie-react";
 import contact from '../../assets/lottis/contact.json'
+const inputBase = 'bg-base-100 text-base-content border border-primary/40 rounded-md px-4 py-3 focus:outline-none focus:border-primary transition'
 
 const Contact = () => (
     <section id="/contact">
@@ -18,19 +19,19 @@ const Contact = () => (
                 <input
                     type="text"
                     placeholder="Your Name"
-                    className="bg-base-100 text-base-content border border-primary/40 rounded-md px-4 py-3 focus:outline-none focus:border-primary transition"
+                    className={inputBase}
                     required
                 />
                 <input
                     type="email"
                     placeholder="Your Email"
-                    className="bg-base-100 text-base-content border border-primary/40 rounded-md px-4 py-3 focus:outline-none focus:border-primary transition"
+                    className={inputBase}
                     required
                 />
                 <textarea
                     placeholder="Your Message"
-                    rows={3}
-                    className="bg-base-100 text-base-content border border-primary/40 rounded-md px-4 py-3 focus:outline-none focus:border-primary transition"
+                    rows={4}
+                    className={inputBase}
                     required
                 />
                 <Button
@@ -41,10 +42,10 @@ const Contact = () => (
             </form>
 
             {/* Contact Info & Socials */}
-            <div className="flex-1 flex flex-col items-center md:items-start justify-center gap-6">
-              <div >
-                <Lottie animationData={contact} className="w-full h-[150px] md:h-[250px]" />
-            </div>
+            <div className="flex-1 flex flex-col items-center md:items-start md:pl-10 justify-center gap-6">
+                <div >
+                    <Lottie animationData={contact} className="w-full h-[150px] md:h-[250px]" />
+                </div>
                 <div className="flex flex-col gap-2 text-base-content/90">
                     <div className="flex items-center gap-3">
                         <FaPhone className="text-primary text-xl" />

@@ -65,7 +65,7 @@ const Skills = () => {
     return (
 
         <section id='/skills'>
-            <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto px-4">
                 {/* Section Heading */}
                 <SectionHeading>My Skills</SectionHeading>
                 {/* Tab Toggle */}

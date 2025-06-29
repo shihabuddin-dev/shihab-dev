@@ -8,7 +8,7 @@ import resume from '../../assets/resume.pdf';
 
 const Hero = () => {
     return (
-        <section className="flex flex-col md:flex-row items-center justify-between gap-8 md:rellative">
+        <section className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Left: Text Content */}
             <motion.div
                 className="flex flex-col items-start gap-3 md:gap-4"
@@ -16,14 +16,9 @@ const Hero = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <motion.p
-                    className="text-primary text-lg font-semibold"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
-                >
-                    Hello! I am
-                </motion.p>
+                <p className="text-primary text-lg font-semibold -mb-3">
+                    Hello! I am,
+                </p>
                 <motion.h1
                     className="text-4xl md:text-5xl font-bold leading-tight text-base-content"
                     initial={{ opacity: 0, y: 20 }}

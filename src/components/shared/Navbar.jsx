@@ -14,7 +14,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "About", path: "/about", icon: <FaUser className="inline" /> },
         { name: "Skills", path: "/skills", icon: <FaTools className="inline" /> },
-        { name: "Projects", path: "/Projects", icon: <FaProjectDiagram className="inline" /> },
+        { name: "Projects", path: "/projects", icon: <FaProjectDiagram className="inline" /> },
         { name: "Blog", path: "/blog", icon: <FaBlog className="inline" /> },
         { name: "Contact", path: "/contact", icon: <FaEnvelope className="inline " /> },
     ];

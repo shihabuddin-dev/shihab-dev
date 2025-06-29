@@ -1,14 +1,16 @@
 import About from '../../components/home/About';
 import Contact from '../../components/home/Contact';
 import Hero from '../../components/home/Hero';
+import Projects from '../../components/home/Projects';
 import Skills from '../../components/home/Skills';
 
 const Home = () => {
     return (
-        <div className='py-12 md:py-18 space-y-24 md:space-y-32 max-w-5xl mx-auto px-4'>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-20 space-y-20 md:space-y-32">
             <Hero />
             <About />
             <Skills />
+            <Projects />
             <Contact />
         </div>
     );

@@ -11,7 +11,7 @@ const skills = [
 
 const About = () => {
     return (
-        <section id='/about' className="bg-gradient-to-b from-base-100 to-base-200/20">
+        <section id='/about' className="bg-gradient-to-b from-base-100 to-base-200/20 px-4 md:px-0 py-8 md:py-12 rounded-md">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ const About = () => {
                 <SectionHeading>About Me</SectionHeading>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-8 md:mt-10">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center mt-6 sm:mt-8 md:mt-10">
 
                 {/* Image Section */}
                 <motion.div
@@ -29,25 +29,24 @@ const About = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="relative order-2 lg:order-1"
                 >
-                    <div className="relative max-w-sm mx-auto lg:max-w-md">
+                    <div className="relative max-w-xs sm:max-w-sm mx-auto lg:max-w-md">
                         {/* Background decoration */}
-                        <div className="absolute -inset-6 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-md blur-3xl opacity-60"></div>
+                        <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-md blur-3xl opacity-60"></div>
 
                         {/* Image container */}
                         <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 p-2 rounded-md shadow-2xl">
                             <img
                                 src={shihab}
                                 alt="Shihab Uddin - MERN Stack Developer"
-                                className="w-full h-76 md:h-120 object-cover duration-900 transition transform ease-in-out rounded-md shadow-lg grayscale-80 hover:grayscale-0"
+                                className="w-full h-64 sm:h-76 md:h-120 object-cover duration-900 transition transform ease-in-out rounded-md shadow-lg grayscale-70 hover:grayscale-0  hover:scale-105 hover:shadow-lg"
                             />
                         </div>
 
                         {/* Floating badge */}
                         <div
-                            className="absolute -bottom-4 -right-1 md:-right-12"
-
+                            className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-1 md:-right-12"
                         >
-                            <Button >
+                            <Button className="text-xs sm:text-sm px-3 py-1 sm:px-4 sm:py-2">
                                 Available for hire
                             </Button>
                         </div>
@@ -59,16 +58,16 @@ const About = () => {
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="space-y-8 order-1 lg:order-2"
+                    className="space-y-6 sm:space-y-8 order-1 lg:order-2"
                 >
                     <motion.div
-                        className="space-y-6"
+                        className="space-y-4 sm:space-y-6"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
                         <motion.div
-                            className="space-y-4 text-base md:text-lg text-base-content/70"
+                            className="space-y-3 sm:space-y-4 text-base md:text-lg text-base-content/70"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
@@ -96,19 +95,19 @@ const About = () => {
 
                     {/* Skills Section */}
                     <motion.div
-                        className="space-y-4"
+                        className="space-y-3 sm:space-y-4"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.4 }}
                     >
                         <motion.h3
-                            className="text-xl font-semibold text-base-content flex items-center gap-2"
+                            className="text-lg sm:text-xl font-semibold text-base-content flex items-center gap-2"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 1.6 }}
                         >
                             <motion.span
-                                className="w-1 h-6 bg-primary rounded-full"
+                                className="w-1 h-5 sm:h-6 bg-primary rounded-full"
                                 initial={{ scaleY: 0 }}
                                 animate={{ scaleY: 1 }}
                                 transition={{ duration: 0.6, delay: 1.8 }}
@@ -116,7 +115,7 @@ const About = () => {
                             Technologies I work with:
                         </motion.h3>
                         <motion.div
-                            className="flex flex-wrap gap-2 md:gap-3"
+                            className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 2.0 }}
@@ -138,7 +137,7 @@ const About = () => {
                                         transition: { duration: 0.2 }
                                     }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="px-4 py-1.5 bg-base-200 hover:bg-primary hover:text-primary-content rounded-full text-sm font-medium transition-all duration-100 cursor-default shadow-sm hover:shadow-md"
+                                    className="px-2.5 sm:px-4 py-1 sm:py-1.5 bg-base-200 hover:bg-primary hover:text-primary-content rounded-full text-xs sm:text-sm font-medium transition-all duration-100 cursor-default shadow-sm hover:shadow-md"
                                 >
                                     {skill}
                                 </motion.span>
