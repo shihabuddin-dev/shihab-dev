@@ -11,14 +11,13 @@ const router = createBrowserRouter([
         path: "/",
         errorElement: <NotFound />,
         hydrateFallbackElement: <Spinner />,
-        loader: ()=>fetch('./about.json'),
+        loader: () => fetch('./about.json'),
         Component: Root,
         children: [
             {
                 index: true,
                 Component: Home
-            },
-
+            }
         ]
     },
 ]);

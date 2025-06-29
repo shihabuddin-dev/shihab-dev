@@ -43,7 +43,7 @@ const Navbar = () => {
                     ))}
                 </ul>
                 {/* Buttons - large screens */}
-                <div className="hidden lg:flex items-center gap-2">
+                <div className="hidden lg:flex items-center gap-4">
                     <ThemeToggle />
                     <Button variant="outline"><a href={resume} download>RESUME</a></Button>
                 </div>

@@ -11,7 +11,7 @@ const skills = [
 
 const About = () => {
     return (
-        <section id='/about' className="bg-gradient-to-b from-base-100 to-base-200/20 px-4 md:px-0 py-8 md:py-12 rounded-md">
+        <section id='/about' className="scroll-mt-20 bg-gradient-to-b from-base-100 to-base-200/20 px-4 md:px-0 py-8 md:py-12 rounded-md">
             <SectionHeading>About Me</SectionHeading>
             <div className="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-20 items-center">
 
@@ -31,7 +31,7 @@ const About = () => {
                             <img
                                 src={shihab}
                                 alt="Shihab Uddin - MERN Stack Developer"
-                                className="w-full h-64 sm:h-76 md:h-120 object-cover duration-900 transition transform ease-in-out rounded-md shadow-lg grayscale-70 hover:grayscale-0  hover:scale-105 hover:shadow-lg"
+                                className="w-full h-76 md:h-120 object-cover duration-900 transition transform ease-in-out rounded-md shadow-lg grayscale-70 hover:grayscale-0  hover:scale-105 hover:shadow-lg"
                             />
                         </div>
 

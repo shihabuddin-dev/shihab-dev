@@ -41,7 +41,7 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section id="/projects" className='px-2 md:px-0'>
+    <section id="/projects" className='px-2 md:px-0 scroll-mt-30'>
       <SectionHeading>My Projects</SectionHeading>
       {/* Responsive Grid for Project Cards */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-self">
