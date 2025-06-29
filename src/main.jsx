@@ -4,8 +4,9 @@ import './index.css'
 import { RouterProvider } from 'react-router'
 import router from './router/routes.jsx'
 
-// import pronounceWord from './utils/PronounceWord.js'
-// pronounceWord('Welcome to Shihab Uddin Website')
+// word pronunce 
+import pronounceWord from './utils/PronounceWord.js'
+pronounceWord('Welcome to Shihab Uddin Website')
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

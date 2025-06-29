@@ -1,10 +1,30 @@
-import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaWhatsapp } from "react-icons/fa";
 import SectionHeading from "../shared/SectionHeading";
 import AnimatedSocialIcon from "../shared/AnimatedSocialIcon";
 import Button from "../ui/Button";
 import Lottie from "lottie-react";
 import contact from '../../assets/lottis/contact.json'
 const inputBase = 'bg-base-100 text-base-content border border-primary/40 rounded-md px-4 py-3 focus:outline-none focus:border-primary transition'
+const contactInfo = [
+    {
+        icon: <FaEnvelope className="text-lg" />,
+        title: "Email",
+        value: "shihabuddin.dev@gmail.com",
+        link: "mailto:shihabuddin.dev@gmail.com"
+    },
+    {
+        icon: <FaPhone className="text-lg" />,
+        title: "Phone / Whatsapp",
+        value: "+8801740520249",
+        link: "tel:+8801740520249"
+    },
+    {
+        icon: <FaMapMarkerAlt className="text-lg" />,
+        title: "Location",
+        value: "Bogura, Bangladesh"
+    },
+
+];
 
 const Contact = () => (
     <section id="/contact">
@@ -42,22 +62,32 @@ const Contact = () => (
             </form>
 
             {/* Contact Info & Socials */}
-            <div className="flex-1 flex flex-col items-center md:items-start md:pl-10 justify-center gap-6">
-                <div >
-                    <Lottie animationData={contact} className="w-full h-[150px] md:h-[250px]" />
+            <div className="flex-1 flex flex-col items-center justify-between gap-6">
+                <div className="w-full mx-auto">
+                    <Lottie animationData={contact} className="w-full h-[150px] md:h-[200px]" />
                 </div>
-                <div className="flex flex-col gap-2 text-base-content/90">
-                    <div className="flex items-center gap-3">
-                        <FaPhone className="text-primary text-xl" />
-                        <FaWhatsapp className="text-primary text-xl" />
-                        <span>+8801740-520249</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <FaEnvelope className="text-primary text-xl" />
-                        <span>shihabuddin.dev@gmail.com</span>
-                    </div>
+                {/* Contact Info Cards */}
+                <div className="grid md:grid-cols-2 gap-3">
+                    {contactInfo.map((info, index) => (
+                        <a
+                            key={index}
+                            href={info.link}
+                            className="group flex items-center gap-3 p-4 bg-base-200/30 backdrop-blur-sm rounded-md border border-primary/20 hover:shadow-lg hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1"
+                        >   <div className="text-primary group-hover:scale-110 transition-transform duration-300">
+                                {info.icon}
+                            </div>
+                            <div>
+                                <h4 className="text-sm group-hover:text-secondary/90 transition-colors duration-300">
+                                    {info.title}
+                                </h4>
+                                <p className="text-xs text-secondary/80 group-hover:text-secondary/70 transition-colors duration-300">
+                                    {info.value}
+                                </p>
+                            </div>
+                        </a>
+                    ))}
+                    <div className="mt-6">  <AnimatedSocialIcon /></div>
                 </div>
-                <div><AnimatedSocialIcon /></div>
 
             </div>
         </div>

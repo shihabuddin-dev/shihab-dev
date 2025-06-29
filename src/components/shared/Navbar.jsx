@@ -32,7 +32,7 @@ const Navbar = () => {
                     <Logo />
                 </div>
                 {/* Nav links - large screens */}
-                <ul className="hidden lg:flex gap-2 text-sm font-medium border-0">
+                <ul className="hidden lg:flex gap-1 text-sm font-medium border-0">
                     {navLinks.map((link) => (
                         <li key={link.name}>
                             <a href={`#${link.path}`} className={linkClass}>
@@ -60,7 +60,7 @@ const Navbar = () => {
                 className={`lg:hidden backdrop-blur-xl bg-gradient-to-t from-primary/2 via-base-100/50 to-primary/8 border-b border-dashed border-primary/30 text-base-content fixed top-0 left-0 h-full w-full z-50 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
                     }`}
             >
-                <div className="p-6 space-y-6 backdrop-blur-xl bg-base-100 h-auto border-b border-dashed border-primary/30">
+                <div className="p-6 space-y-3 backdrop-blur-xl bg-base-100 h-auto border-b border-dashed border-primary/30">
 
                     {/* Close button */}
                     <button
