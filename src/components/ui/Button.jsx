@@ -7,7 +7,7 @@ const Button = ({
   ...props
 }) => {
   let styles =
-    "border-2 border-primary px-4 py-1.5 rounded-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/60 ";
+    "border-2 border-primary px-3 md:px-4 py-1.5 rounded-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/60 ";
 
   if (variant === "primary") {
     styles += " bg-primary hover:text-white";

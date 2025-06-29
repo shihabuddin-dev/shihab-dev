@@ -8,10 +8,10 @@ import resume from '../../assets/resume.pdf';
 
 const Hero = () => {
     return (
-        <section className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-4">
             {/* Left: Text Content */}
             <motion.div
-                className="flex flex-col items-start gap-3 md:gap-4"
+                className="flex flex-col items-start gap-4"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -27,7 +27,7 @@ const Hero = () => {
                 >
                     Shihab <span className="text-primary">Uddin</span>
                 </motion.h1>
-                <h2 className="text-xl md:text-2xl font-medium text-base-content/80"
+                <h2 className="text-base md:text-2xl font-medium text-base-content/80"
                 >
                     <Typewriter
                         words={['MERN Stack Developer', 'Learning TypeScript & Next.js', 'Tech Enthusiast', 'Continuous Learner!']}
@@ -54,15 +54,12 @@ const Hero = () => {
                 >
                     <AnimatedSocialIcon />
                 </motion.div>
-                <motion.div
+                <div
                     className="flex gap-2 md:gap-4 mt-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.6 }}
                 >
                     <Button>   <a href="#/contact">Contact Me</a></Button>
                     <Button variant='outline'> <a href={resume} download>Get Resume</a></Button>
-                </motion.div>
+                </div>
             </motion.div>
 
             {/* Right: Lottie Animation */}

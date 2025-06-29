@@ -69,7 +69,7 @@ const Skills = () => {
                 {/* Section Heading */}
                 <SectionHeading>My Skills</SectionHeading>
                 {/* Tab Toggle */}
-                <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-10">
+                <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-10">
                     {categories.map((category) => (
                         <button
                             key={category}

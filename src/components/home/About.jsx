@@ -12,8 +12,8 @@ const skills = [
 const About = () => {
     return (
         <section id='/about' className="bg-gradient-to-b from-base-100 to-base-200/20 px-4 md:px-0 py-8 md:py-12 rounded-md">
-                <SectionHeading>About Me</SectionHeading>
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
+            <SectionHeading>About Me</SectionHeading>
+            <div className="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-20 items-center">
 
                 {/* Image Section */}
                 <motion.div
@@ -37,7 +37,7 @@ const About = () => {
 
                         {/* Floating badge */}
                         <div
-                            className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-1 md:-right-12"
+                            className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-1 md:-right-4 lg:-right-12"
                         >
                             <Button className="text-xs sm:text-sm px-3 py-1 sm:px-4 sm:py-2">
                                 Available for hire

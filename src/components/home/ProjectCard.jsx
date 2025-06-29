@@ -76,7 +76,7 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <article className="group bg-gradient-to-br from-base-100 to-base-200/50 rounded-xl shadow-lg border border-base-300/50 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 ease-in-out overflow-hidden h-full" title={`Click and show about ${title} Project`}>
+    <article className="group bg-gradient-to-br from-base-100 to-base-200/50 rounded-md shadow-lg border border-base-300/50 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 ease-in-out overflow-hidden h-full" title={`Click and show about ${title} Project`}>
       
       {/* Image Container */}
       <div className="relative overflow-hidden h-48">
