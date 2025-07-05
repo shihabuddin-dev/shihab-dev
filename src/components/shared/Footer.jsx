@@ -1,10 +1,11 @@
 import { FaStar, FaCodeBranch, FaHeart, } from "react-icons/fa";
+import { FaArrowTurnUp } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 
 const thanks = [
     { text: "Thanks" },
-    { text: "ধন্যবাদ" },
     { text: "شکریہ" },
+    { text: "ধন্যবাদ" },
 ];
 
 export default function Footer() {
@@ -33,18 +34,17 @@ export default function Footer() {
             {/* Right: Star, Fork */}
             <div className="flex items-center gap-4 cursor-pointer">
                 <div className="flex items-center gap-3">
-                    <a href="https://github.com/shihabuddin-dev/shihab-dev" target="blank" className="flex items-center gap-0.5"> <FaStar className="text-md" />
+                    <a href="https://github.com/shihabuddin-dev/shihab-dev" target="blank" className="flex items-center gap-0.5 hover:underline"> <FaStar className="text-md" />
                         <span>Star</span></a>
-                    <a href="https://github.com/shihabuddin-dev/shihab-dev" target="blank" className="flex items-center gap-0.5"> 
+                    <a href="https://github.com/shihabuddin-dev/shihab-dev" target="blank" className="flex items-center gap-0.5 hover:underline"> 
     
                     <FaCodeBranch className="text-md" />
                     <span>Fork</span>
                         </a>
 
                 </div>
-                <button onClick={handleGoToTop} className="btn btn-primary btn-xs">
-                    <MdOutlineKeyboardArrowUp
-                        className="text-xl" />
+                <button onClick={handleGoToTop} className="bg-primary py-2 px-1 rounded cursor-pointer" title="Go Top">
+                    <FaArrowTurnUp />
                 </button>
             </div>
 

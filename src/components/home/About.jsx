@@ -39,7 +39,7 @@ const About = () => {
                         <div
                             className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-1 md:-right-4 lg:-right-12"
                         >
-                            <Button className="text-xs sm:text-sm px-3 py-1 sm:px-4 sm:py-2">
+                            <Button className="text-xs sm:text-sm px-2 sm:px-4 py-2">
                                 Available for hire
                             </Button>
                         </div>

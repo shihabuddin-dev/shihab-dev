@@ -1,4 +1,4 @@
-# Shihab Uddin - Portfolio Website
+# Shihab Uddin - Developer Portfolio Website
 
 A modern, responsive portfolio website built with React, showcasing my skills, projects, and professional experience.
 

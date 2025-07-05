@@ -50,7 +50,7 @@ const Navbar = () => {
 
                 {/* Hamburger - small screens */}
                 <div className="lg:hidden">
-                    <button onClick={() => setIsOpen(true)} className="py-2 px-2 bg-primary rounded-sm text-lg text-black">
+                    <button onClick={() => setIsOpen(true)} className="py-2 px-2 bg-primary rounded-sm text-lg">
                         <GiHamburgerMenu />
                     </button>
                 </div>
