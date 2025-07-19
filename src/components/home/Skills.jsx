@@ -18,6 +18,7 @@ import {
     SiReactquery,
     SiFirebase,
     SiJsonwebtokens,
+    SiNextdotjs,
 } from 'react-icons/si';
 
 const skillsData = {
@@ -27,16 +28,17 @@ const skillsData = {
         { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-300" />, borderColor: 'border-cyan-300', shadowColor: 'hover:shadow-cyan-300/40' },
         { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" />, borderColor: 'border-yellow-400', shadowColor: 'hover:shadow-yellow-400/40' },
         { name: 'React', icon: <FaReact className="text-cyan-400" />, borderColor: 'border-cyan-400', shadowColor: 'hover:shadow-cyan-400/40' },
+        { name: 'Next.js', icon: <SiNextdotjs className="text-base-content" />, borderColor: 'border-base-content', shadowColor: 'hover:shadow-base-content/40' },
         { name: 'Node.js', icon: <FaNodeJs className="text-green-400" />, borderColor: 'border-green-400', shadowColor: 'hover:shadow-green-400/40' },
         { name: 'Express.js', icon: <SiExpress />, borderColor: 'border-base-content', shadowColor: 'hover:shadow-base-content/30' },
         { name: 'MongoDB', icon: <SiMongodb className="text-primary" />, borderColor: 'border-primary', shadowColor: 'hover:shadow-primary/40' },
-        { name: 'Firebase', icon: <SiFirebase className="text-yellow-500" />, borderColor: 'border-yellow-500', shadowColor: 'hover:shadow-yellow-500/40' },
-        { name: 'JWT', icon: <SiJsonwebtokens className="text-amber-500" />, borderColor: 'border-amber-500', shadowColor: 'hover:shadow-amber-500/40' },
+        { name: 'Firebase', icon: <SiFirebase className="text-yellow-500" />, borderColor: 'border-yellow-500', shadowColor: 'hover:shadow-yellow-500/40' }
     ],
 
     Tools: [
         { name: 'Git', icon: <FaGitAlt className="text-orange-600" />, borderColor: 'border-orange-600', shadowColor: 'hover:shadow-orange-600/40' },
         { name: 'GitHub', icon: <FaGithub className="text-base-content" />, borderColor: 'border-base-content', shadowColor: 'hover:shadow-base-content/30' },
+        { name: 'JWT', icon: <SiJsonwebtokens className="text-amber-500" />, borderColor: 'border-amber-500', shadowColor: 'hover:shadow-amber-500/40' },
         { name: 'Atlas', icon: <SiMongodb className="text-primary" />, borderColor: 'border-primary', shadowColor: 'hover:shadow-primary/40' },
         { name: 'Netlify', icon: <SiNetlify className="text-green-400" />, borderColor: 'border-green-400', shadowColor: 'hover:shadow-green-400/40' },
         { name: 'Vercel', icon: <SiVercel />, borderColor: 'border-base-content', shadowColor: 'hover:shadow-base-content/30' },

@@ -28,7 +28,7 @@ const Navbar = () => {
         <nav className="backdrop-blur-xl bg-gradient-to-t from-primary/2 via-base-100/50 to-primary/8 fixed top-0 left-0 w-full z-50 border-b border-dashed border-primary/30">
             <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
                 {/* Logo */}
-                <div className="w-12 h-12">
+                <div className="w-12 h-10 md:h-12">
                     <Logo />
                 </div>
                 {/* Nav links - large screens */}

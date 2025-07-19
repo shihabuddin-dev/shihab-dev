@@ -33,9 +33,12 @@ import {
 } from 'react-icons/si';
 import { BiLogoReact } from 'react-icons/bi';
 import { FaShieldAlt } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 const ProjectCard = ({ project }) => {
-  const { title, description, image, tags, links } = project;
+  const { title, description, tags, links } = project;
 
   // Icon mapping - maps icon names to React icon components
   const iconMap = {
@@ -76,16 +79,28 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <article className="group bg-gradient-to-br from-base-100 to-base-200/50 rounded-md shadow-lg border border-base-300/50 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 ease-in-out overflow-hidden h-full" title={`Click and show about ${title} Project`}>
+    <article className="group bg-gradient-to-br from-base-100 to-base-200/50 rounded-md shadow-lg border border-base-300/50 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 ease-in-out overflow-hidden h-full">
       
       {/* Image Container */}
       <div className="relative overflow-hidden h-48">
-        <img
-          src={image}
-          alt={`Screenshot of ${title}`}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          loading="lazy"
-        />
+        <div>
+          {project.images ? (
+            <Swiper
+              spaceBetween={10}
+              slidesPerView={1}
+              modules={[Autoplay]}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+            >
+              {project.images.map((img, idx) => (
+                <SwiperSlide key={idx}>
+                  <img src={img} alt={project.title} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <img src={project.image} alt={project.title} />
+          )}
+        </div>
         {/* Image overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-base-300/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
