@@ -16,7 +16,7 @@ const NotFound = () => {
     ];
 
     return (
-        <div className="bg-gradient-to-br from-base-100 via-base-200/50 to-base-100 flex items-center justify-center p-4 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-base-100 via-base-200/50 to-base-100 flex items-center justify-center p-4 relative overflow-hidden">
             {/* Floating Background Elements */}
             {floatingElements.map((element, index) => (
                 <motion.div
