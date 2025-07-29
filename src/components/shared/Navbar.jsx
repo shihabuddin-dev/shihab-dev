@@ -45,7 +45,7 @@ const Navbar = () => {
                 {/* Buttons - large screens */}
                 <div className="hidden lg:flex items-center gap-4">
                     <ThemeToggle />
-                    <Button variant="outline"><a href={resume} download>RESUME</a></Button>
+                    <Button variant="primary"><a href={resume} download>RESUME</a></Button>
                 </div>
 
                 {/* Hamburger - small screens */}
@@ -95,7 +95,7 @@ const Navbar = () => {
                     {/* Resume & Theme Toggle */}
                     <div className="flex justify-center items-center gap-4">
                         <ThemeToggle />
-                        <Button onClick={handleLinkClick} variant="outline">
+                        <Button onClick={handleLinkClick} variant="primary">
                             <a href={resume} download>RESUME</a>
                         </Button>
                     </div>

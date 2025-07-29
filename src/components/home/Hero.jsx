@@ -30,7 +30,7 @@ const Hero = () => {
                 <h2 className="text-base md:text-2xl font-medium text-base-content/80"
                 >
                     <Typewriter
-                        words={['MERN Stack Developer', 'Learning TypeScript & Next.js', 'Tech Enthusiast', 'Continuous Learner!']}
+                        words={['MERN Stack Developer','Paassionate Full Stack Developer', 'Tech Enthusiast','Learning TypeScript',]}
                         loop={100}
                         cursor
                         cursorStyle='|'

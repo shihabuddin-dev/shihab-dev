@@ -53,7 +53,8 @@ const projectsData = [
     tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss"],
     links: {
       live: "https://traditional-recipe.web.app/",
-      github: "https://github.com/shihabuddin-dev/traditional-recipe-client",
+      githubClient: "https://github.com/shihabuddin-dev/traditional-recipe-client",
+      githubServer: "https://github.com/shihabuddin-dev/traditional-recipe-server",
     },
   },
   {
@@ -61,10 +62,11 @@ const projectsData = [
     title: "Athletic Hub",
     description: "Join the ultimate sports community! Connect with athletes, coaches, and fans, share your journey, join exciting events, and stay inspired with the latest updates and news.",
     images: [project2Img1, project2Img2, project2Img3, project2Img4, project2Img5, project2Img6, project2Img7, project2Img8, project2Img9, project2Img10, project2Img11, project2Img12, project2Img13],
-    tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss","SiJwt"],
+    tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiJwt"],
     links: {
       live: "https://athletichub-pro.web.app/",
-      github: "https://github.com/shihabuddin-dev/athletic-hub-client",
+      githubClient: "https://github.com/shihabuddin-dev/athletic-hub-client",
+      githubServer: "https://github.com/shihabuddin-dev/athletic-hub-server",
     },
   },
   {
@@ -75,9 +77,11 @@ const projectsData = [
     tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiVercel", "SiJwt"],
     links: {
       live: "https://edu-sync-pro.web.app/",
-      github: "https://github.com/shihabuddin-dev/edu-sync-client",
+      githubClient: "https://github.com/shihabuddin-dev/edu-sync-client",
+      githubServer: "https://github.com/shihabuddin-dev/edu-sync-server",
     },
   },
+
 ];
 
 const Projects = () => {

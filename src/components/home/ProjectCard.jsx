@@ -1,13 +1,13 @@
 import { FaGithub, FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiTailwindcss, 
-  SiAstro, 
-  SiMdx, 
-  SiHtml5, 
-  SiCss3, 
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiAstro,
+  SiMdx,
+  SiHtml5,
+  SiCss3,
   SiJavascript,
   SiNodedotjs,
   SiMongodb,
@@ -72,7 +72,7 @@ const ProjectCard = ({ project }) => {
     'SiPaypal': SiPaypal,
     'SiAlgolia': SiAlgolia,
     'SiCloudinary': SiCloudinary,
-    'SiReactrouter': BiLogoReact, 
+    'SiReactrouter': BiLogoReact,
     'SiSwiper': SiJavascript,
     'SiRecharts': SiJavascript,
     'SiJwt': FaShieldAlt
@@ -80,7 +80,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <article className="group bg-gradient-to-br from-base-100 to-base-200/50 rounded-md shadow-lg border border-base-300/50 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 ease-in-out overflow-hidden h-full">
-      
+
       {/* Image Container */}
       <div className="relative overflow-hidden h-48">
         <div>
@@ -108,17 +108,17 @@ const ProjectCard = ({ project }) => {
       {/* Card Content */}
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-base-content mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
-        
+
         {/* Description */}
         <p className="text-base-content/70 text-sm leading-relaxed flex-grow mb-4">{description}</p>
-        
+
         {/* Technology Icons Only */}
         <div className="flex flex-wrap gap-3 mb-6">
           {tags.map((iconName, index) => {
             const IconComponent = iconMap[iconName];
             return IconComponent ? (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="w-5 h-6 rounded-lg flex items-center justify-center  hover:scale-110 hover:shadow-xl transition-all duration-300 group/icon border border-base-300/30"
                 title={iconName.replace('Si', '')} // Tooltip for accessibility
               >
@@ -127,9 +127,18 @@ const ProjectCard = ({ project }) => {
             ) : null;
           })}
         </div>
-        
+
         {/* Links */}
         <div className="flex items-center justify-between pt-4 border-t border-base-300/30">
+          <a
+            href={links.githubClient}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-base-content/70 hover:text-base-content transition-colors duration-300 hover:scale-105"
+          >
+            <FaGithub className="w-3 h-3" />
+            Client
+          </a>
           <a
             href={links.live}
             target="_blank"
@@ -137,16 +146,16 @@ const ProjectCard = ({ project }) => {
             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-focus transition-colors duration-300 hover:scale-105"
           >
             <FaArrowUpRightFromSquare className="w-3 h-3" />
-            Live Demo
+            Live
           </a>
           <a
-            href={links.github}
+            href={links.githubServer}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-base-content/70 hover:text-base-content transition-colors duration-300 hover:scale-105"
           >
             <FaGithub className="w-3 h-3" />
-            Source Code
+            Server
           </a>
         </div>
       </div>
