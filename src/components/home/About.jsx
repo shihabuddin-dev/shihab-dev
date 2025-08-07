@@ -71,7 +71,7 @@ const About = () => {
                                 transition={{ duration: 0.6, delay: 1.0 }}
                             >
                                 Hello! I'm <strong className="text-base-content">Shihab Uddin</strong>, a passionate MERN Stack Developer
-                                focused on creating innovative web solutions and user-friendly interfaces.
+                                focused on creating innovative web solutions and user friendly interfaces.
                             </motion.p>
 
                             <motion.p
@@ -81,7 +81,7 @@ const About = () => {
                             >
                                 I specialize in building scalable applications using modern technologies.
                                 I'm constantly learning and staying updated with the latest industry trends
-                                to deliver cutting-edge solutions.
+                                to deliver cutting edge solutions.
                             </motion.p>
                         </motion.div>
                     </motion.div>
