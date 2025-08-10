@@ -21,6 +21,7 @@ A modern, responsive portfolio website built with React, showcasing my skills, p
 - **Project Showcase** - Detailed project cards with modal views
 - **404 Page** - Custom, user-friendly error page
 - **Performance Optimized** - Fast loading with Vite build tool
+- **Legacy Browser Support** - Uses Vite Legacy plugin for maximum browser compatibility
 
 ## 🛠️ Technologies Used
 
@@ -41,6 +42,7 @@ A modern, responsive portfolio website built with React, showcasing my skills, p
 - **React Simple Typewriter 5.0.1** - Typing animation effects
 - **EmailJS 4.4.1** - Email integration
 - **PostCSS & Autoprefixer** - CSS processing
+- **@vitejs/plugin-legacy** - Legacy browser support
 
 ## 📁 Project Structure
 
@@ -126,6 +128,7 @@ src/
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
+- Legacy browsers (with Vite Legacy plugin)
 
 ## 🤝 Contributing
 

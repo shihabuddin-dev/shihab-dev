@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaStackOverflow, FaFacebook, FaDiscord } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaStackOverflow, FaFacebook, FaDiscord, FaTwitter } from 'react-icons/fa';
 import SectionHeading from '../shared/SectionHeading';
 import Button from '../ui/Button';
 
@@ -119,16 +119,22 @@ const Contact = () => {
             url: "https://linkedin.com/in/shihab-dev",
             color: "hover:text-primary"
         },
-        {
-            icon: <FaDiscord className="text-xl" />,
-            name: "Discord",
-            url: "https://discord.com/users/shihab.dev",
-            color: "hover:text-primary"
-        },
+        // {
+        //     icon: <FaDiscord className="text-xl" />,
+        //     name: "Discord",
+        //     url: "https://discord.com/users/shihab.dev",
+        //     color: "hover:text-primary"
+        // },
         {
             icon: <FaGithub className="text-xl" />,
             name: "GitHub",
             url: "https://github.com/shihabuddin-dev",
+            color: "hover:text-primary"
+        },
+        {
+            icon: <FaTwitter className="text-xl" />,
+            name: "Twitter",
+            url: "https://x.com/shihab_dev",
             color: "hover:text-primary"
         },
         {
@@ -240,7 +246,7 @@ const Contact = () => {
                             <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
+                                className="w-full disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base md:py-2"
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}
                             </Button>
