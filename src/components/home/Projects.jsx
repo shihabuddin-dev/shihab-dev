@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import SectionHeading from '../shared/SectionHeading';
 import Button from '../ui/Button';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
 import project1Img1 from '../../assets/projects/project1/1.png';
 import project1Img2 from '../../assets/projects/project1/2.png';
 import project1Img3 from '../../assets/projects/project1/3.png';
@@ -42,6 +46,8 @@ import project3Img11 from '../../assets/projects/project3/11.png';
 import project3Img12 from '../../assets/projects/project3/12.png';
 import project3Img13 from '../../assets/projects/project3/13.png';
 import project3Img14 from '../../assets/projects/project3/14.png';
+import { FaGithub, FaGlobe } from 'react-icons/fa';
+import { MdOutlineSettings } from 'react-icons/md';
 
 
 const projectsData = [
@@ -85,17 +91,69 @@ const projectsData = [
 ];
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
   return (
     <section id="/projects" className='px-2 md:px-0 scroll-mt-30'>
       <SectionHeading>My Projects</SectionHeading>
       {/* Responsive Grid for Project Cards */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-self">
         {projectsData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.id} project={project} onDetails={() => setSelectedProject(project)} />
         ))}
       </div>
       <a href='https://shihabuddin-repo.vercel.app/' target='blank' className='flex justify-center mt-10'><Button variant='outline'>More Projects</Button></a>
+      {/* Modal */}
+      {selectedProject && (
+        <dialog
+          id="project_modal"
+          className="modal modal-open border border-primary/20 backdrop-blur-xs"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className="modal-box max-w-3xl border border-primary/20"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-bold text-2xl text-primary">{selectedProject.title}</h3>
+              <button
+                className="btn btn-circle btn-sm btn-outline btn-primary hover:bg-primary hover:text-base-100 hover:shadow-md hover:shadow-primary/20 transition-all"
+                onClick={() => setSelectedProject(null)}
+              >
+                &times;
+              </button>
+            </div>
 
+            {/* Swiper Slider for Images */}
+            {selectedProject.images && selectedProject.images.length > 0 && (
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                modules={[Autoplay]}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                className="mb-4 rounded-md border border-base-300"
+              >
+                {selectedProject.images.map((img, idx) => (
+                  <SwiperSlide key={idx}>
+                    <img src={img} alt={selectedProject.title} className="w-full h-76 object-cover rounded" />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            )}
+            <p className="mb-4 text-base-content/80">{selectedProject.description}</p>
+            <div className="mb-4">
+              <span className="font-semibold">Technologies:</span> {selectedProject.tags?.join(', ')}
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-sm mb-4">
+              <a href={selectedProject.links?.live} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"><FaGlobe /> Live</a>
+              <a href={selectedProject.links?.githubClient} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"> <FaGithub />Client</a>
+              <a href={selectedProject.links?.githubServer} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"> <MdOutlineSettings />Server</a>
+            </div>
+            <div className="modal-action">
+              <button className="btn btn-primary btn-outline hover:shadow-md hover:shadow-primary/20 transition-all" onClick={() => setSelectedProject(null)}>Close</button>
+            </div>
+          </div>
+        </dialog>
+      )}
     </section>
   );
 };

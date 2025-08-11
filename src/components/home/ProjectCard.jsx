@@ -38,8 +38,8 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 
-const ProjectCard = ({ project }) => {
-  const { title, description, tags, links } = project;
+const ProjectCard = ({ project, onDetails }) => {
+  const { title, description, tags, links, images } = project;
 
   // Icon mapping - maps icon names to React icon components
   const iconMap = {
@@ -85,21 +85,21 @@ const ProjectCard = ({ project }) => {
       {/* Image Container */}
       <div className="relative overflow-hidden h-48">
         <div>
-          {project.images ? (
+          {images ? (
             <Swiper
               spaceBetween={10}
               slidesPerView={1}
               modules={[Autoplay]}
               autoplay={{ delay: 2000, disableOnInteraction: false }}
             >
-              {project.images.map((img, idx) => (
+              {images.map((img, idx) => (
                 <SwiperSlide key={idx}>
-                  <img src={img} alt={project.title} />
+                  <img src={img} alt={title} />
                 </SwiperSlide>
               ))}
             </Swiper>
           ) : (
-            <img src={project.image} alt={project.title} />
+            <img src={project.image} alt={title} />
           )}
         </div>
         {/* Image overlay on hover */}
@@ -149,7 +149,7 @@ const ProjectCard = ({ project }) => {
           </a>
           <button
             className="btn btn-sm btn-outline btn-primary hover:scale-110 hover:shadow-md hover:shadow-primary/40 transition-all duration-400 border-primary/70 hover:border-primary min-w-[90px] text-base-content/80"
-          // onClick={() => setSelectedProject(project)}
+            onClick={onDetails}
           >
             <FaCode className="mr-1" /> Details
           </button>
