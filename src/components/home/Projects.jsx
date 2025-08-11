@@ -56,6 +56,9 @@ const projectsData = [
     id: 1,
     title: "Edu Sync",
     description: "Empower your learning journey! Edu Sync connects students, tutors, and admins for seamless education. Access resources, join live classes, and manage progress in place.",
+    brief: "Edu Sync is a modern, collaborative platform designed to connect students, tutors, and administrators for a seamless educational experience. It streamlines study session scheduling, resource sharing, and progress tracking all in a secure, user friendly environment.",
+    challenges: "Implementing role based dashboards, secure authentication, real time study session management, and integrating Stripe payments while maintaining a modern, responsive UI/UX.",
+    improvements: "Planned improvements include adding AI powered study recommendations, more advanced analytics, deeper integrations with third party learning tools, and enhanced accessibility features.",
     images: [project3Img1, project3Img2, project3Img3, project3Img4, project3Img5, project3Img6, project3Img7, project3Img8, project3Img9, project3Img10, project3Img11, project3Img12, project3Img13, project3Img14],
     tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiVercel", "SiJwt"],
     links: {
@@ -68,6 +71,9 @@ const projectsData = [
     id: 2,
     title: "Traditional Recipe",
     description: "Unleash your inner chef! Discover, share, and savor authentic recipes from around the globe. Connect with food lovers, explore cuisines, and add masterpieces today.",
+    brief: "Traditional Recipe is a curated collection of authentic recipes from around the world. The platform lets users explore, cook, and preserve culinary heritage with easy to follow instructions, beautiful images, and cultural context for each dish.",
+    challenges: "Building a scalable recipe database, implementing real time data sync and authentication with Firebase, designing a fully responsive UI, and integrating interactive features like Swiper carousels, Lottie animations, and statistics dashboards.",
+    improvements: "Future plans include expanding the recipe collection, adding user generated content moderation, introducing AI powered recipe recommendations, and enhancing accessibility and performance across devices.",
     images: [project1Img1, project1Img2, project1Img3, project1Img4, project1Img5, project1Img6, project1Img7, project1Img8, project1Img9, project1Img10, project1Img11],
     tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiAwesomeReveal", "SiInfinityScroll"],
     links: {
@@ -80,6 +86,9 @@ const projectsData = [
     id: 3,
     title: "Athletic Hub",
     description: "Join the ultimate sports community! Connect with athletes, coaches, and fans, share your journey, join exciting events, and stay inspired with the latest updates and news.",
+    brief: "Athletic Hub is a next generation, animated, and fully responsive event booking platform for athletes, organizers, and fans. It enables seamless event discovery, booking, and management with a modern UI, real time features, and robust organizer tools.",
+    challenges: "Designing a stunning, branded UI/UX with advanced animations, implementing real time booking and feedback, building secure authentication and organizer tools, and ensuring accessibility and flawless performance across all devices.",
+    improvements: "Future enhancements include deeper analytics for organizers, more social features for athletes and fans, AI powered event recommendations, and expanded support for international sporting events.",
     images: [project2Img1, project2Img2, project2Img3, project2Img4, project2Img5, project2Img6, project2Img7, project2Img8, project2Img9, project2Img10, project2Img11, project2Img12, project2Img13],
     tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiVercel", "SiJwt"],
     links: {
@@ -135,18 +144,38 @@ const Projects = () => {
               >
                 {selectedProject.images.map((img, idx) => (
                   <SwiperSlide key={idx}>
-                    <img src={img} alt={selectedProject.title} className="w-full h-76 object-cover rounded" />
+                    <img src={img} alt={selectedProject.title} className="w-full h-36 md:h-76 object-cover rounded" />
                   </SwiperSlide>
                 ))}
               </Swiper>
             )}
-            <p className="mb-4 text-base-content/80">{selectedProject.description}</p>
+            <p className="mb-4 text-base-content/80 italic">{selectedProject.description}</p>
+            {selectedProject.brief && (
+              <div className="mb-4">
+                <span className="font-semibold">Brief Description:</span>
+                <p className="text-base-content/70 text-sm mt-1">{selectedProject.brief}</p>
+              </div>
+            )}
+            {selectedProject.challenges && (
+              <div className="mb-4">
+                <span className="font-semibold">Challenges Faced:</span>
+                <p className="text-base-content/70 text-sm mt-1">{selectedProject.challenges}</p>
+              </div>
+            )}
+            {selectedProject.improvements && (
+              <div className="mb-4">
+                <span className="font-semibold">Potential Improvements & Future Plans:</span>
+                <p className="text-base-content/70 text-sm mt-1">{selectedProject.improvements}</p>
+              </div>
+            )}
+            <p className='mb-2 font-semibold'>Technology:</p>
             {/* Tags with Icons */}
             <div className="flex flex-wrap gap-3 mb-4">
               {selectedProject.tags?.map((iconName, index) => (
                 <TechIcon key={index} iconName={iconName} />
               ))}
             </div>
+            {/* Links  */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm mb-4">
               <a href={selectedProject.links?.live} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"><FaGlobe /> Live</a>
               <a href={selectedProject.links?.githubClient} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"> <FaGithub />Client</a>

@@ -1,4 +1,4 @@
-import { FaGithub} from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa6';
 import { FaCode, FaGlobe } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -37,18 +37,18 @@ const ProjectCard = ({ project, onDetails }) => {
       </div>
 
       {/* Card Content */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-4 md:p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-base-content mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
 
         {/* Description */}
         <p className="text-base-content/70 text-sm leading-relaxed flex-grow mb-4">{description}</p>
 
         {/* Technology Icons Only */}
-        <div className="flex flex-wrap gap-3 mb-6 cursor-pointer">
+        <div className="flex flex-wrap gap-2 md:gap-3 mb-4 md:mb-6 cursor-pointer">
           {tags.map((iconName, index) => (
             <span
               key={index}
-              className="w-5 h-6 rounded-lg flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all duration-300 group/icon border border-base-300/30"
+              className="w-4 md:w-5 h-6 rounded-lg flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all duration-300 group/icon border border-base-300/30"
               title={iconName.replace('Si', '')}
             >
               <TechIcon iconName={iconName} minimal className="w-5 h-5 text-base-content/70 group-hover/icon:text-primary transition-colors duration-300 bg-transparent px-0 py-0" label="" />
