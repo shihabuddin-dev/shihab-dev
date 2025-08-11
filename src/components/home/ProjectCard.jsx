@@ -32,10 +32,11 @@ import {
   SiCloudinary
 } from 'react-icons/si';
 import { BiLogoReact } from 'react-icons/bi';
-import { FaShieldAlt } from 'react-icons/fa';
+import { FaCode, FaGlobe, FaShieldAlt, FaTimes } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+
 
 const ProjectCard = ({ project }) => {
   const { title, description, tags, links } = project;
@@ -129,34 +130,29 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Links */}
-        <div className="flex items-center justify-between pt-4 border-t border-base-300/30">
-          <a
-            href={links.githubClient}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-base-content/70 hover:text-base-content transition-colors duration-300 hover:scale-105"
-          >
-            <FaGithub className="w-3 h-3" />
-            Client
-          </a>
+        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm">
           <a
             href={links.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-focus transition-colors duration-300 hover:scale-105"
+            className="btn btn-sm btn-primary hover:scale-110 hover:shadow-md hover:shadow-primary/40 transition-all duration-400 shadow-md min-w-[90px] text-base-content/80"
           >
-            <FaArrowUpRightFromSquare className="w-3 h-3" />
-            Live
+            <FaGlobe className='mr-1' /> Live
           </a>
           <a
-            href={links.githubServer}
+            href={links.githubClient}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-base-content/70 hover:text-base-content transition-colors duration-300 hover:scale-105"
+            className="btn btn-sm btn-outline btn-primary hover:scale-110 hover:bg-primary hover:shadow-md hover:shadow-primary/40 transition-all duration-400 border-primary/70 hover:border-primary min-w-[90px] text-base-content/80"
           >
-            <FaGithub className="w-3 h-3" />
-            Server
+            <FaGithub className='mr-1' /> Repo
           </a>
+          <button
+            className="btn btn-sm btn-outline btn-primary hover:scale-110 hover:shadow-md hover:shadow-primary/40 transition-all duration-400 border-primary/70 hover:border-primary min-w-[90px] text-base-content/80"
+          // onClick={() => setSelectedProject(project)}
+          >
+            <FaCode className="mr-1" /> Details
+          </button>
         </div>
       </div>
     </article>
