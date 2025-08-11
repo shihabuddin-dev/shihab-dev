@@ -48,35 +48,12 @@ import project3Img13 from '../../assets/projects/project3/13.png';
 import project3Img14 from '../../assets/projects/project3/14.png';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
 import { MdOutlineSettings } from 'react-icons/md';
+import TechIcon from '../shared/TechIcon';
 
 
 const projectsData = [
   {
     id: 1,
-    title: "Traditional Recipe",
-    description: "Unleash your inner chef! Discover, share, and savor authentic recipes from around the globe. Connect with food lovers, explore cuisines, and add masterpieces today.",
-    images: [project1Img1, project1Img2, project1Img3, project1Img4, project1Img5, project1Img6, project1Img7, project1Img8, project1Img9, project1Img10, project1Img11],
-    tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss"],
-    links: {
-      live: "https://traditional-recipe.web.app/",
-      githubClient: "https://github.com/shihabuddin-dev/traditional-recipe-client",
-      githubServer: "https://github.com/shihabuddin-dev/traditional-recipe-server",
-    },
-  },
-  {
-    id: 2,
-    title: "Athletic Hub",
-    description: "Join the ultimate sports community! Connect with athletes, coaches, and fans, share your journey, join exciting events, and stay inspired with the latest updates and news.",
-    images: [project2Img1, project2Img2, project2Img3, project2Img4, project2Img5, project2Img6, project2Img7, project2Img8, project2Img9, project2Img10, project2Img11, project2Img12, project2Img13],
-    tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiJwt"],
-    links: {
-      live: "https://athletichub-pro.web.app/",
-      githubClient: "https://github.com/shihabuddin-dev/athletic-hub-client",
-      githubServer: "https://github.com/shihabuddin-dev/athletic-hub-server",
-    },
-  },
-  {
-    id: 3,
     title: "Edu Sync",
     description: "Empower your learning journey! Edu Sync connects students, tutors, and admins for seamless education. Access resources, join live classes, and manage progress in place.",
     images: [project3Img1, project3Img2, project3Img3, project3Img4, project3Img5, project3Img6, project3Img7, project3Img8, project3Img9, project3Img10, project3Img11, project3Img12, project3Img13, project3Img14],
@@ -85,6 +62,30 @@ const projectsData = [
       live: "https://edu-sync-pro.web.app/",
       githubClient: "https://github.com/shihabuddin-dev/edu-sync-client",
       githubServer: "https://github.com/shihabuddin-dev/edu-sync-server",
+    },
+  },
+  {
+    id: 2,
+    title: "Traditional Recipe",
+    description: "Unleash your inner chef! Discover, share, and savor authentic recipes from around the globe. Connect with food lovers, explore cuisines, and add masterpieces today.",
+    images: [project1Img1, project1Img2, project1Img3, project1Img4, project1Img5, project1Img6, project1Img7, project1Img8, project1Img9, project1Img10, project1Img11],
+    tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiAwesomeReveal", "SiInfinityScroll"],
+    links: {
+      live: "https://traditional-recipe.web.app/",
+      githubClient: "https://github.com/shihabuddin-dev/traditional-recipe-client",
+      githubServer: "https://github.com/shihabuddin-dev/traditional-recipe-server",
+    },
+  },
+  {
+    id: 3,
+    title: "Athletic Hub",
+    description: "Join the ultimate sports community! Connect with athletes, coaches, and fans, share your journey, join exciting events, and stay inspired with the latest updates and news.",
+    images: [project2Img1, project2Img2, project2Img3, project2Img4, project2Img5, project2Img6, project2Img7, project2Img8, project2Img9, project2Img10, project2Img11, project2Img12, project2Img13],
+    tags: ["SiJavascript", "SiReact", "SiNodedotjs", "SiExpress", "SiMongodb", "SiFirebase", "SiTailwindcss", "SiVercel", "SiJwt"],
+    links: {
+      live: "https://athletichub-pro.web.app/",
+      githubClient: "https://github.com/shihabuddin-dev/athletic-hub-client",
+      githubServer: "https://github.com/shihabuddin-dev/athletic-hub-server",
     },
   },
 
@@ -119,7 +120,7 @@ const Projects = () => {
                 className="btn btn-circle btn-sm btn-outline btn-primary hover:bg-primary hover:text-base-100 hover:shadow-md hover:shadow-primary/20 transition-all"
                 onClick={() => setSelectedProject(null)}
               >
-                &times;
+                X
               </button>
             </div>
 
@@ -140,16 +141,19 @@ const Projects = () => {
               </Swiper>
             )}
             <p className="mb-4 text-base-content/80">{selectedProject.description}</p>
-            <div className="mb-4">
-              <span className="font-semibold">Technologies:</span> {selectedProject.tags?.join(', ')}
+            {/* Tags with Icons */}
+            <div className="flex flex-wrap gap-3 mb-4">
+              {selectedProject.tags?.map((iconName, index) => (
+                <TechIcon key={index} iconName={iconName} />
+              ))}
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-3 text-sm mb-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm mb-4">
               <a href={selectedProject.links?.live} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"><FaGlobe /> Live</a>
               <a href={selectedProject.links?.githubClient} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"> <FaGithub />Client</a>
               <a href={selectedProject.links?.githubServer} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline btn-primary text-base-content/80 hover:shadow-md hover:shadow-primary/20 hover:scale-110 transition-all"> <MdOutlineSettings />Server</a>
             </div>
             <div className="modal-action">
-              <button className="btn btn-primary btn-outline hover:shadow-md hover:shadow-primary/20 transition-all" onClick={() => setSelectedProject(null)}>Close</button>
+              <button className="btn btn-primary btn-outline btn-sm hover:shadow-md hover:shadow-primary/20 transition-all" onClick={() => setSelectedProject(null)}>Close</button>
             </div>
           </div>
         </dialog>
