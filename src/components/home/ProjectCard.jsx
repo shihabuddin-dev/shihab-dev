@@ -57,28 +57,28 @@ const ProjectCard = ({ project, onDetails }) => {
         </div>
 
         {/* Links */}
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm">
+        <div className="flex items-center justify-center gap-2 md:gap-4 text-sm">
           <a
             href={links.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-sm btn-primary hover:scale-110 hover:shadow-md hover:shadow-primary/40 transition-all duration-400 shadow-md min-w-[90px] text-base-content/80"
+            className="btn btn-sm btn-primary hover:scale-110 hover:shadow-md hover:shadow-primary/40 transition-all duration-400 shadow-md md:min-w-[90px] text-base-content/80"
           >
-            <FaGlobe className='mr-1' /> Live
+            <FaGlobe className='md:mr-1' /> Live
           </a>
           <a
             href={links.githubClient}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-sm btn-outline btn-primary hover:scale-110 hover:bg-primary hover:shadow-md hover:shadow-primary/40 transition-all duration-400 border-primary/70 hover:border-primary min-w-[90px] text-base-content/80"
+            className="btn btn-sm btn-outline btn-primary hover:scale-110 hover:bg-primary hover:shadow-md hover:shadow-primary/40 transition-all duration-400 border-primary/70 hover:border-primary md:min-w-[90px] text-base-content/80"
           >
-            <FaGithub className='mr-1' /> Repo
+            <FaGithub className='md:mr-1' /> Repo
           </a>
           <button
-            className="btn btn-sm btn-outline btn-primary hover:scale-110 hover:shadow-md hover:shadow-primary/40 transition-all duration-400 border-primary/70 hover:border-primary min-w-[90px] text-base-content/80"
+            className="btn btn-sm btn-outline btn-primary hover:scale-110 hover:shadow-md hover:shadow-primary/40 transition-all duration-400 border-primary/70 hover:border-primary md:min-w-[90px] text-base-content/80"
             onClick={onDetails}
           >
-            <FaCode className="mr-1" /> Details
+            <FaCode className="md:mr-1" /> Details
           </button>
         </div>
       </div>
