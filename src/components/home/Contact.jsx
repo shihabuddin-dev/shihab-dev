@@ -140,7 +140,7 @@ const Contact = () => {
         {
             icon: <FaFacebook className="text-xl" />,
             name: "Facebook",
-            url: "https://www.facebook.com/shihabuddinReal/",
+            url: "https://www.facebook.com/shihab.dev",
             color: "hover:text-primary"
         },
         {

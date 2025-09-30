@@ -18,7 +18,7 @@ const socialLinks = [
         label: 'Twitter',
     },
     {
-        href: 'https://www.facebook.com/shihabuddinReal/',
+        href: 'https://www.facebook.com/shihab.dev',
         icon: <FaFacebook />,
         label: 'Facebook',
     },
