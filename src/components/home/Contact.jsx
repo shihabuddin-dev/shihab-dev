@@ -1,97 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaStackOverflow, FaFacebook, FaDiscord, FaTwitter } from 'react-icons/fa';
 import SectionHeading from '../shared/SectionHeading';
 import Button from '../ui/Button';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
-
-    // Load EmailJS script
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-        script.async = true;
-        script.onload = () => {
-            if (window.emailjs) {
-                window.emailjs.init(import.meta.env.VITE_EMAIL_PUBLIC_KEY); //  public key
-
-            }
-        };
-        script.onerror = () => {
-            console.error('Failed to load EmailJS');
-        };
-        document.head.appendChild(script);
-
-        return () => {
-            const existingScript = document.querySelector('script[src*="email.min.js"]');
-            if (existingScript) {
-                document.head.removeChild(existingScript);
-            }
-        };
-    }, []);
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setSubmitStatus(null);
-
-        // Check if EmailJS is properly configured
-        if (!window.emailjs) {
-            console.error('EmailJS not loaded');
-            setSubmitStatus('error');
-            setIsSubmitting(false);
-            return;
-        }
-
-        try {
-
-            // Send email using EmailJS
-            const result = await window.emailjs.send(
-                import.meta.env.VITE_EMAIL_SERVICE_ID, // EmailJS service ID
-                import.meta.env.VITE_EMAIL_TEMPLATE_ID, // EmailJS template ID
-                {
-                    to_name: "Shihab Uddin",
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    subject: formData.subject,
-                    message: formData.message,
-                    reply_to: formData.email,
-                    contact_number: formData.phone || "Not provided",
-                    sender_info: `Name: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`
-                }
-            );
-
-            console.log('Email sent successfully:', result);
-            setSubmitStatus('success');
-
-            // Reset form
-            setFormData({
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
-            });
-        } catch (error) {
-            console.error('Email sending failed:', error);
-            setSubmitStatus('error');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    const [state, handleSubmit] = useForm("myznpjwa");
 
     const contactInfo = [
         {
@@ -164,13 +78,13 @@ const Contact = () => {
                         <h3 className="text-xl sm:text-2xl font-bold text-primary mb-6">Send Message</h3>
 
                         {/* Status Messages */}
-                        {submitStatus === 'success' && (
+                        {state.succeeded && (
                             <div className="mb-6 p-4 bg-base-100 border border-primary/40 text-green-500 rounded-md">
                                 <p className="text-sm sm:text-base"> Message sent successfully! I'll get back to you soon.</p>
                             </div>
                         )}
 
-                        {submitStatus === 'error' && (
+                        {state.errors && (
                             <div className="mb-6 p-4 bg-base-100 border border-primary/40 text-red-500 rounded-md">
                                 <p className="text-sm sm:text-base">Failed to send message. Please contact me directly at shihabuddin.dev@gmail.com</p>
                             </div>
@@ -186,10 +100,8 @@ const Contact = () => {
                                         type="text"
                                         id="name"
                                         name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
                                         required
-                                        disabled={isSubmitting}
+                                        disabled={state.submitting}
                                         className={inputBase}
                                         placeholder="Your name"
                                     />
@@ -202,12 +114,15 @@ const Contact = () => {
                                         type="email"
                                         id="email"
                                         name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
                                         required
-                                        disabled={isSubmitting}
+                                        disabled={state.submitting}
                                         className={inputBase}
                                         placeholder="you@example.com"
+                                    />
+                                    <ValidationError
+                                        prefix="Email"
+                                        field="email"
+                                        errors={state.errors}
                                     />
                                 </div>
                             </div>
@@ -219,10 +134,8 @@ const Contact = () => {
                                     type="text"
                                     id="subject"
                                     name="subject"
-                                    value={formData.subject}
-                                    onChange={handleChange}
                                     required
-                                    disabled={isSubmitting}
+                                    disabled={state.submitting}
                                     className={inputBase}
                                     placeholder="What's this about?"
                                 />
@@ -234,21 +147,24 @@ const Contact = () => {
                                 <textarea
                                     id="message"
                                     name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
                                     required
                                     rows="5"
-                                    disabled={isSubmitting}
+                                    disabled={state.submitting}
                                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-base-100 border border-primary/20 rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-secondary placeholder-secondary/50 resize-none disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                                     placeholder="Tell me about your project or just say hello!"
+                                />
+                                <ValidationError
+                                    prefix="Message"
+                                    field="message"
+                                    errors={state.errors}
                                 />
                             </div>
                             <Button
                                 type="submit"
-                                disabled={isSubmitting}
+                                disabled={state.submitting}
                                 className="w-full disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base md:py-2"
                             >
-                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                                {state.submitting ? 'Sending...' : 'Send Message'}
                             </Button>
                         </form>
                     </div>
@@ -298,20 +214,21 @@ const Contact = () => {
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`group flex items-center justify-center w-10 h-10 bg-base-200/50 backdrop-blur-sm rounded-md border border-primary/20 text-secondary/80 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 ${social.color}`}
+                                        className = {`group flex items-center justify-center w-10 h-10 bg-base-200/50 backdrop-blur-sm rounded-md border border-primary/20 text-secondary/80 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 ${social.color}`}
                                     >
-                                        <div className="group-hover:scale-110 transition-transform duration-300">
-                                            {social.icon}
-                                        </div>
-                                    </a>
+                                <div className="group-hover:scale-110 transition-transform duration-300">
+                                    {social.icon}
+                                </div>
+                            </a>
                                 ))}
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        </section >
     );
 };
+
 
 export default Contact;

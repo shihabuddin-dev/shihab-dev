@@ -26,21 +26,24 @@ A modern, responsive portfolio website built with React, showcasing my skills, p
 ## 🛠️ Technologies Used
 
 ### Frontend
+
 - **React 19.1.0** - Modern React with latest features
 - **Vite** - Fast build tool and development server
 - **TailwindCSS 4.1.11** - Utility-first CSS framework
 - **DaisyUI** - Component library for TailwindCSS
 
 ### UI/UX Libraries
+
 - **Framer Motion 12.19.2** - Smooth animations and transitions
 - **React Icons 5.5.0** - Beautiful icon library
 - **Lottie React 2.4.1** - Animated illustrations
 - **Headless UI 2.2.4** - Accessible UI components
 
 ### Additional Tools
+
 - **React Router 7.6.3** - Client-side routing
 - **React Simple Typewriter 5.0.1** - Typing animation effects
-- **EmailJS 4.4.1** - Email integration
+- **formspree 3.0.0** - Email integration
 - **PostCSS & Autoprefixer** - CSS processing
 - **@vitejs/plugin-legacy** - Legacy browser support
 
@@ -72,23 +75,27 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/shihabuddin-dev/shihab-dev
    cd shihab-portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -101,22 +108,26 @@ src/
 ## 🌟 Features in Detail
 
 ### Responsive Design
+
 - Mobile-first approach
 - Breakpoint optimizations for all screen sizes
 - Touch-friendly interactions
 
 ### Performance
+
 - Optimized bundle size with Vite
 - Lazy loading for better performance
 - Efficient component rendering
 
 ### Accessibility
+
 - Semantic HTML structure
 - ARIA labels and roles
 - Keyboard navigation support
 - Screen reader friendly
 
 ### Modern Development
+
 - Latest React features
 - Modern JavaScript (ES6+)
 - Component-based architecture
@@ -148,4 +159,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Built with ❤️ by Shihab Uddin**
 
-*Connect with me on [LinkedIn](https://www.linkedin.com/in/shihab-dev/) or email me at [shihabuddin.dev@gmail.com](mailto:shihabuddin.dev@gmail.com)*
+_Connect with me on [LinkedIn](https://www.linkedin.com/in/shihab-dev/) or email me at [shihabuddin.dev@gmail.com](mailto:shihabuddin.dev@gmail.com)_
