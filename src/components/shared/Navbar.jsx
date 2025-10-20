@@ -5,9 +5,11 @@ import Logo from "./Logo";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosClose } from "react-icons/io";
 import { FaUser, FaTools, FaProjectDiagram, FaBlog, FaEnvelope } from "react-icons/fa";
-import resume from '../../assets/resume.pdf';
+// import  from '../../assets/resume.pdf';
 
 const Navbar = () => {
+    const resume = "https://drive.google.com/file/d/1tjs39OnNDDm02-tUt78LK120ePUsZDmq/view?usp=sharing"
+    
     const [isOpen, setIsOpen] = useState(false);
 
     // Add icon property to each nav link
