@@ -4,7 +4,7 @@ import ThemeToggle from "../ui/ThemeToggle";
 import Logo from "./Logo";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosClose } from "react-icons/io";
-import { FaUser, FaTools, FaProjectDiagram, FaBlog, FaEnvelope } from "react-icons/fa";
+import { FaUser, FaTools, FaProjectDiagram, FaEnvelope, FaHome } from "react-icons/fa";
 // import  from '../../assets/resume.pdf';
 
 const Navbar = () => {
@@ -14,10 +14,10 @@ const Navbar = () => {
 
     // Add icon property to each nav link
     const navLinks = [
+        { name: "Home", path: "/", icon: <FaHome className="inline" /> },
         { name: "About", path: "/about", icon: <FaUser className="inline" /> },
         { name: "Skills", path: "/skills", icon: <FaTools className="inline" /> },
         { name: "Projects", path: "/projects", icon: <FaProjectDiagram className="inline" /> },
-        { name: "Blog", path: "/blog", icon: <FaBlog className="inline" /> },
         { name: "Contact", path: "/contact", icon: <FaEnvelope className="inline " /> },
     ];
     const linkClass = "hover:text-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/60 flex items-center gap-2 rounded-md btn btn-outline bg-transparent border-none hover:bg-primary hover:text-white hover:btn-primary hover:scale-110 hover:shadow-lg";
